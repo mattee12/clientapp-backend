@@ -26,7 +26,6 @@ public class ClientController {
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<ResponseClientCreate> create(@RequestBody RequestClientCreate requestClientCreate){
         final ResponseClientCreate result = clientService.create(requestClientCreate.getName(), requestClientCreate.getJob());
         return ResponseEntity.status(result.getHttpStatus()).body(result);
